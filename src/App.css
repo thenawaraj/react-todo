@@ -1,0 +1,205 @@
+
+
+nav{
+  display: flex;
+  justify-content:space-between;
+  padding:0 7.5vw;
+  height: 60px;
+  align-items: center;
+}
+section.home{
+  padding:0 7.5vw;
+  overflow: auto;
+  height: calc(100vh-60px);
+  background: rgba(0,0,0,.1);
+}
+
+.title-area{
+  display: flex;
+  justify-content: space-between;
+}
+.section-title{
+  font-size:36px;
+  font-weight: bold
+}
+.section-description{
+  width:400px;
+  margin-bottom:36px;
+}
+.task-content{
+  display: flex;
+  width:100%;
+flex: 1;
+}
+
+.task-container{
+  flex:1;
+  padding:0 8px;
+  height:100%;
+  overflow: auto;
+  
+}
+
+.task-container-title{
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+
+.task-card {
+  padding: 16px;
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(3px);
+  border-radius: 8px;
+  transition: .3s;
+  cursor: pointer;
+  margin-bottom: 8px;
+  position: relative;
+
+}
+
+.task-card:hover{
+  box-shadow: 0 2px 16px 3px rgba(0,0,0,.12);
+}
+.tag-chip{
+  background: black;
+  padding: 8px 20px;
+  border-radius: 50px;
+  color: white;
+  
+}
+.task-header{
+display: flex;
+justify-content: space-between;
+}
+.task-title{
+  margin-top: 16px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/*dialog*/
+.dialog {
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dialog .backdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.dialog .card {
+  background: white;
+  z-index: 1;
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0 2px 16px 3px rgba(0, 0, 0, 0.12);
+}
+
+.slideTop {
+  animation: slideTop .3s ease-in;
+}
+
+
+@keyframes slideTop {
+  from {
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
+    opacity: 1;
+  }
+}
+
+
+.add-task-form {
+  width: 400px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+}
+.add-task-form .form-title {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.add-task-form .form-content {
+flex: 1;
+padding: 8px 0;
+}
+.add-task-form .form-input {
+  margin-top: 4px;
+  margin-bottom: 8px;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+
+.add-task-form .form-input label {
+  font-size: 11px;
+  font-weight: bold;
+}
+.add-task-form .form-input input, .add-task-form .form-input select {
+  border: none;
+}
+
+.add-task-form .form-input input:focus, .add-task-form .form-input input:active, .add-task-form .form-input select:focus, .add-task-form .form-input select:active {
+  outline: none;
+}
+
+
+.btn {
+  padding: 9px 50px;
+  border: none;
+  border-radius: 4px;
+  cursor:pointer ;
+  font-size: 14px;
+  margin: 2px;
+  
+}
+
+.btn.primary {
+  background:#f47321;
+  color:#ffff ;
+  font-size: 13px;
+}
+
+.btn.primary.outline {
+  background: white;
+  color:#494949;
+  border: 1px solid #494949;
+}
+.btn-area{
+  display: flex;
+  justify-content: flex-end;
+}
+
+.add-task-btn{
+  background:dodgerblue;
+  color:#ffff ;
+  padding: 7px 20px;
+  border: none;
+  cursor:pointer ;
+  font-size: 15px;
+  border-radius: 6px;
+  margin-top: 11px;
+  font-family: 'Poppins','sans-serif';
+}
