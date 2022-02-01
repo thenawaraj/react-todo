@@ -25,7 +25,16 @@ const toggleAppear=()=>{
 
 
 
-const tasks=[...TASKS];
+// const tasks=[...TASKS];
+const[tasks,setTasks]=useState([...TASKS])
+
+const addTask =(task)=>{
+setTasks([...tasks,task]);
+toggleAppear();
+}
+
+
+
  return <> <main>
         {/* This is the landing Screen.  */}
         {/* <nav>
@@ -77,7 +86,7 @@ const tasks=[...TASKS];
         
     {isAppear ?  <Dialog closeDialog={toggleAppear}>
      {/* This is the dialog text */}
-     <AddTask/>
+     <AddTask closeDialog={toggleAppear} addTask={addTask}/>
     </Dialog> : ''}
     
 
