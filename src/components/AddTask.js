@@ -10,7 +10,7 @@ export const AddTask=(props)=>{
     ]
 
     const [task,setTask]= useState({
-        id: (new Date()).toISOString(),
+        id: -1,
         title:'',
         description:'',
         tag:'',

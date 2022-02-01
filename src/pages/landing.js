@@ -28,12 +28,16 @@ const toggleAppear=()=>{
 // const tasks=[...TASKS];
 const[tasks,setTasks]=useState([...TASKS])
 
+
 const addTask =(task)=>{
 setTasks([...tasks,task]);
 toggleAppear();
 }
 
-
+const deleteTask = (id) => {
+    const tempTasks = tasks.filter(v=> v.id !==id);
+    setTasks([...tempTasks]);
+}
 
  return <> <main>
         {/* This is the landing Screen.  */}
@@ -76,10 +80,10 @@ toggleAppear();
             </div> */}
 
             <div className="task-content">
-            <TaskContainer title="Todo" tasks={taskFilterHandler('todo')}/>
-            <TaskContainer title="In progress" tasks={taskFilterHandler('inProgress')}/>
-            <TaskContainer title="Review"tasks={taskFilterHandler('review')}/>
-            <TaskContainer title="Completed"tasks={taskFilterHandler('completed')}/>
+            <TaskContainer title="Todo" tasks={taskFilterHandler('todo')} deleteTask={deleteTask}/>
+            <TaskContainer title="In progress" tasks={taskFilterHandler('inProgress')} deleteTask={deleteTask}/>
+            <TaskContainer title="Review"tasks={taskFilterHandler('review')} deleteTask={deleteTask}/>
+            <TaskContainer title="Completed"tasks={taskFilterHandler('completed')} deleteTask={deleteTask}/>
             </div>
         </section>
     </main>
