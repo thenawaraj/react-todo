@@ -1,7 +1,7 @@
 import { Dialog } from "./common/Dialog"
 import { Task } from "./Task";
 import { useState } from "react";
-export const AddTask=(props)=>{
+export const EditTask=(props)=>{
     const options = [
         {label:"To do", value:"todo"},
         {label:"In Progress", value:"inProgress"},
@@ -9,32 +9,38 @@ export const AddTask=(props)=>{
         {label:"Completed", value:"completed"},
     ]
 
+    
     const [task,setTask]= useState({
         id: '',
-        title:'',
-        description:'',
-        tag:'',
-        status:'todo'
+        title:props.editTask.title,
+        description:props.editTask.description,
+        tag:props.editTask.tag,
+        status:props.editTask.status
     });
+
+
+
+
 
     const inputHandler = (e)=>{
         setTask({
             ...task,
             [e.target.name]: e.target.value
+        
         });
+        // setTask={
+        //     id: 'props.getValue',
+        //     title:'props.getValue',
+        //     description:'',
+        //     tag:'',
+        //     status:'todo'
+        // }
     }
 
-    const createTask=(e)=>{
-    e.preventDefault();//stop reloading the browser
-    props.addTask(task);
-    ;
-    
-    }
 
-
-    return <form className="add-task-form" onSubmit={createTask}>
+    return <form className="add-task-form">
             {/* This is the add task form */}
-        <div className="form-title">Add Task</div>
+        <div className="form-title" >Edit Task</div>
         <div className="form-content">
         <div className="form-input">
         <label>Title</label>
@@ -63,7 +69,7 @@ export const AddTask=(props)=>{
 
         <div className="btn-area">
             <button className="btn primary outline">Close</button>
-            <button className="btn primary" type="submit">Add</button>
+            <button className="btn primary" type="submit" onClick={updateValue}>Update</button>
         </div>
     </form>
 

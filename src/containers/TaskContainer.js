@@ -6,9 +6,10 @@ return <div className="task-container">
     <div className="task-container-title">{props.title}</div>
     <div className="task-list">
    
-    {props.tasks.map((task,key)=>
-    <Task task={task} remove={props.deleteTask}/>
+    {props.tasks.map((task)=>
+    <Task task={task} remove={props.deleteTask} edit={props.editTask}/>
     )};
+   
 
     </div>
     </div>
